@@ -1,0 +1,57 @@
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6408722f09.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="estilos/estilos.css">
+
+    <title>SURTIMAX</title>
+</head>
+<body>
+   
+    
+    <div class="contenedor">
+        <aside>
+            <header>
+                
+                <h1 class="logo">SURTIMAX</h1>
+                <h6 class="titulo">AL ALCANCE DE TU BOLSILLO</h6>
+            </header>
+            <nav>
+            <ul class="items">
+                <li><button id="todos" class="btnMenu activo btn" ><i class="fa-solid fa-warehouse"></i> Todos los productos</button></li>
+                <li><button id="ALIMENTOS" class="btnMenu btn" ><i class="fa-solid fa-apple-whole"></i> Alimentos</button></li>
+                <li><button id="ASEO HOGAR" class="btnMenu btn" ><i class="fa-solid fa-broom-ball"></i> Aseo hogar</button></li>
+                <li><button id="ASEO PERSONAL" class="btnMenu btn" ><i class="fa-solid fa-bath"></i> Aseo personal</button></li>
+                <li><a class="btnCarrito btn" href="carrito.html"><i class="fa-solid fa-cart-arrow-down"></i> Carrito <span id="contador" class="conteo">0</span></a></li>
+            </ul>
+            </nav>
+        <footer>
+            <div id="clima">
+                <h1>Clima en tu Ciudad</h1>
+                <img dir="img" src="img/clima.png" alt="">
+                <p id="city">Ciudad: <span id="ciudad"></span></p>
+                <p id="temp">Temperatura: <span id="temperatura"></span>°C</p>
+                <p id="desc">Descripción: <span id="descripcion"></span></p>
+            </div>
+            <p class="mensajeFooter">Gracias por visitar SURTIMAX 🛒</p>  
+            
+        </footer>
+        </aside>
+        <main>
+            <h3 id="tituloCategorias" class="subtitulo">TODOS LOS PRODUCTOS</h3>
+        <div id="cargaProductos" class="contenedorTarjetas">  
+
+        </div>
+
+        
+        </main>
+        
+    </div>
+    <script src="js/productos.js"></script>
+    <script src="js/compras.js"></script>
+    <script src="js/clima.js"></script>
+</body>
+</html>

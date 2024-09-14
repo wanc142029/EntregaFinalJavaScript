@@ -1,0 +1,67 @@
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6408722f09.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <title>SURTIMAX</title>
+</head>
+<body>
+    
+    <div class="contenedor">
+    <aside>
+        <header>
+            <h1 class="logo">SURTIMAX</h1>
+            <h6 class="titulo">AL ALCANCE DE TU BOLSILLO</h6>
+        </header>
+        <nav>
+            <ul>
+                <li><a class="btnVolver btn" href="index.html"><i class="fa-solid fa-hand-point-left"></i> Seguir comprando</a></li>
+                <li><a class="btnCarrito activo btn" href="carrito.html"><i class="fa-solid fa-cart-arrow-down"></i> Carrito </a></li>
+            </ul>
+        </nav>
+        <footer>
+            <div id="clima">
+                <h1>Clima en tu Ciudad</h1>
+                <img dir="img" src="img/clima.png" alt="">
+                <p id="city">Ciudad: <span id="ciudad"></span></p>
+                <p id="temp">Temperatura: <span id="temperatura"></span>°C</p>
+                <p id="desc">Descripción: <span id="descripcion"></span></p>
+            </div>
+            <p class="mensajeFooter">Gracias por visitar SURTIMAX 🛒</p>  
+        </footer>
+    </aside>
+    <main>
+        <h2 class="subtitulo">CARRITO</h2>
+        <div class="contenedorCarrito">
+            <p id="mensajeVacio" class="carritoVacio titulo" >Tu carrito se encuentra vacio</p>
+
+            <div id="tarjetaProductos" class="carritoProductos oculto">     
+               
+                </div>
+                
+            </div>
+            <div id="tarjetaAcciones" class="carritoMovimientos oculto">
+                <div class="carritoMovimientosIzq">
+                    <button class="vaciarcarrito">VACIAR CARRITO</button>
+                </div>
+                
+                <div class="carritoMovimientosDer">
+                    <div class="carritoTotal">
+                        <p>TOTAL:</p>
+                        <P id="total">$12.500</P>
+                    </div>
+                        <button class="carritoComprar">COMPRAR</button>
+                </div>
+            </div>
+            <p id="mensajeCompra" class="carritoPagado titulo oculto" >Muchas gracias por tu compra</p>
+        </div>
+    </main>
+    <script src="js/productos.js"></script>
+    <script src="js/compras.js"></script>
+    <script src="js/clima.js"></script>
+    
+</body>
+</html>
