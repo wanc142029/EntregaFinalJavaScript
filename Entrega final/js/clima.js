@@ -14,13 +14,14 @@ function getWeather(lat, lon) {
             document.getElementById('ciudad').textContent = data.name || 'No disponible';
             document.getElementById('temperatura').textContent = data.main.temp || 'No disponible';
             document.getElementById('descripcion').textContent = data.weather[0].description || 'No disponible';
-            console.log(data);
+            alert(data);
         })
         .catch(error => {
-            console.error(error);
+            alert(error);
             document.getElementById('ciudad').textContent = 'No disponible';
             document.getElementById('temperatura').textContent = 'No disponible';
             document.getElementById('descripcion').textContent = 'No disponible';
+    
         });
 }
 
