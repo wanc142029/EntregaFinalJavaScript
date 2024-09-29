@@ -6,21 +6,22 @@ function getWeather(lat, lon) {
     fetch(url)
         .then(response => {
             if (!response.ok) {
-                document.getElementById('ciudad').textContent = 'No disponible';
-                document.getElementById('temperatura').textContent = 'No disponible';
-                document.getElementById('descripcion').textContent = 'No disponible';
-                
+                throw new Error('Error en la respuesta del servidor');
             }
             return response.json();
         })
         .then(data => {
-            document.getElementById('ciudad').textContent = data.name;
-            document.getElementById('temperatura').textContent = data.main.temp;
-            document.getElementById('descripcion').textContent = data.weather[0].description;
-            console.log(data)
+            document.getElementById('ciudad').textContent = data.name || 'No disponible';
+            document.getElementById('temperatura').textContent = data.main.temp || 'No disponible';
+            document.getElementById('descripcion').textContent = data.weather[0].description || 'No disponible';
+            console.log(data);
+        })
+        .catch(error => {
+            console.error(error);
+            document.getElementById('ciudad').textContent = 'No disponible';
+            document.getElementById('temperatura').textContent = 'No disponible';
+            document.getElementById('descripcion').textContent = 'No disponible';
         });
-        
-        
 }
 
 function getLocation() {
@@ -29,14 +30,16 @@ function getLocation() {
             const lat = position.coords.latitude;
             const lon = position.coords.longitude;
             getWeather(lat, lon);
-        })
-    }
-    else {
+        }, () => {
+            document.getElementById('ciudad').textContent = 'No disponible';
+            document.getElementById('temperatura').textContent = 'No disponible';
+            document.getElementById('descripcion').textContent = 'No disponible';
+        });
+    } else {
         document.getElementById('ciudad').textContent = 'No disponible';
         document.getElementById('temperatura').textContent = 'No disponible';
         document.getElementById('descripcion').textContent = 'No disponible';
-        
     }
-};
+}
 
 getLocation();
